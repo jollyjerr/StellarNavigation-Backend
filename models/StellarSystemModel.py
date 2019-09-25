@@ -1,6 +1,7 @@
 import os
 import datetime
-from app import db, ma
+
+from . import db, ma
 
 class StellarSystem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
