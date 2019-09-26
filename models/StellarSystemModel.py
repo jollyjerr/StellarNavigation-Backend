@@ -3,6 +3,7 @@ import datetime
 
 from . import db, ma
 
+
 class StellarSystem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128), unique=True, nullable=False)
