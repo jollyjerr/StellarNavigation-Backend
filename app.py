@@ -1,14 +1,14 @@
 from flask import Flask, request, jsonify
 import os
 
-from models import app, db, ma
-
 # import models
 from models.StellarSystemModel import StellarSystem, StellarSystemSchema
 
 # Init schemas
 stellar_system_schema = StellarSystemSchema()
 stellar_systems_schema = StellarSystemSchema(many=True)
+
+from models import app, db, ma
 
 # routes
 @app.route('/stellarsystems', methods=['GET'])
