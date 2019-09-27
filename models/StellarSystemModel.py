@@ -19,6 +19,6 @@ class StellarSystem(db.Model):
         self.created_at = datetime.datetime.utcnow()
         self.modified_at = datetime.datetime.utcnow()
 
-class StellarSystemSchema(ma.Schema):
+class StellarSystemSchema(ma.ModelSchema):
     class Meta:
-        fields = ('id', 'name', 'largeCelestials', 'smallCelestials', 'created_at', 'modified_at')
+        model = StellarSystem

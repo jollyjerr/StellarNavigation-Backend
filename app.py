@@ -26,20 +26,19 @@ CORS(app)
 def get_stellar_systems():
     all_stellar_systems = StellarSystem.query.all()
     result = stellar_systems_schema.dump(all_stellar_systems)
-    logging.debug(result)
 
-    return jsonify(result)
+    return jsonify({"systems": result})
 
-@app.route('/stellarsystem', methods=['POST'])
-def add_stellar_system():
-    name = request.json['name']
+# @app.route('/stellarsystem', methods=['POST'])
+# def add_stellar_system():
+#     name = request.json['name']
 
-    new_stellar_system = StellarSystem(name)
+#     new_stellar_system = StellarSystem(name)
 
-    db.session.add(new_stellar_system)
-    db.session.commit()
+#     db.session.add(new_stellar_system)
+#     db.session.commit()
 
-    return stellar_system_schema.jsonify(new_stellar_system)
+#     return stellar_system_schema.jsonify(new_stellar_system)
 
 
 

@@ -21,6 +21,6 @@ class LargeCelestial(db.Model):
         self.modified_at = datetime.datetime.utcnow()
 
 
-class LargeCelestialSchema(ma.Schema):
+class LargeCelestialSchema(ma.ModelSchema):
     class Meta:
-        fields = ('id', 'stellar_system_id', 'small_celestials','name', 'created_at', 'modified_at')
+        model = LargeCelestial

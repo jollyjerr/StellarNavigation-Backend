@@ -23,6 +23,7 @@ def seed():
     # db.session.add(test_stellar_system)
     db.session.add(test_small)
     db.session.add(test_large)
+    # db.session.add_all([])
     db.session.commit()
 
 
