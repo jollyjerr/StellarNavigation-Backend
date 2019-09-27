@@ -3,6 +3,7 @@ import datetime
 
 from . import db, ma
 
+from .SmallCelestialModel import SmallCelestialSchema
 
 class LargeCelestial(db.Model):
     __tablename__ = 'large_celestial'
@@ -22,5 +23,6 @@ class LargeCelestial(db.Model):
 
 
 class LargeCelestialSchema(ma.ModelSchema):
+    smallCelestials = ma.Nested(SmallCelestialSchema, many=True)
     class Meta:
         model = LargeCelestial
