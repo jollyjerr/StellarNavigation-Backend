@@ -8,10 +8,13 @@ logging.basicConfig(level=logging.DEBUG)
 
 # import models
 from models.StellarSystemModel import StellarSystem, StellarSystemSchema
+from models.SmallCelestialModel import SmallCelestial, SmallCelestialSchema
 
 # Init schemas
 stellar_system_schema = StellarSystemSchema()
 stellar_systems_schema = StellarSystemSchema(many=True)
+small_celestial_schema = SmallCelestialSchema
+small_celestials_schema = SmallCelestialSchema(many=True)
 
 #import functional app
 from models import app, db, ma
