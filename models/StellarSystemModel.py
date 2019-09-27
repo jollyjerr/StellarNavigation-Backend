@@ -3,6 +3,9 @@ import datetime
 
 from . import db, ma
 
+from .LargeCelestialModel import LargeCelestialSchema
+from .SmallCelestialModel import SmallCelestialSchema
+
 
 class StellarSystem(db.Model):
     __tablename__ = 'stellar_system'
@@ -20,5 +23,7 @@ class StellarSystem(db.Model):
         self.modified_at = datetime.datetime.utcnow()
 
 class StellarSystemSchema(ma.ModelSchema):
+    largeCelestials = ma.Nested(LargeCelestialSchema, many=True)
+    smallCelestials = ma.Nested(SmallCelestialSchema, many=True)
     class Meta:
         model = StellarSystem
