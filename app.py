@@ -7,8 +7,9 @@ import os
 logging.basicConfig(level=logging.DEBUG)
 
 # import models
-from models.StellarSystemModel import StellarSystem, StellarSystemSchema
 from models.SmallCelestialModel import SmallCelestial, SmallCelestialSchema
+from models.LargeCelestialModel import LargeCelestial, LargeCelestialSchema
+from models.StellarSystemModel import StellarSystem, StellarSystemSchema
 
 # Init schemas
 stellar_system_schema = StellarSystemSchema()
