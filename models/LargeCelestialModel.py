@@ -9,9 +9,9 @@ class LargeCelestial(db.Model):
     __tablename__ = 'large_celestial'
 
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), unique=True, nullable=False)
     stellar_system_id = db.Column(db.Integer, db.ForeignKey('stellar_system.id'), nullable=False)
     smallCelestials = db.relationship('SmallCelestial', backref='large_celestial', lazy=True)
-    name = db.Column(db.String(128), unique=True, nullable=False)
     created_at = db.Column(db.DateTime)
     modified_at = db.Column(db.DateTime)
 
