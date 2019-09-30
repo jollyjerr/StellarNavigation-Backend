@@ -17,14 +17,14 @@ class SmallCelestial(db.Model):
     created_at = db.Column(db.DateTime)
     modified_at = db.Column(db.DateTime)
 
-    def __init__(self, data):
-        self.name = data.get('name')
-        self.classification = data.get('classification')
-        self.radius = data.get('radius')
-        self.orbital_period = data.get('orbital_period')
-        self.semi_major_axis = data.get('semi_major_axis')
-        self.stellar_system_id = data.get('stellar_system_id')
-        self.large_celestial_id = data.get('large_celestial_id')
+    def __init__(self, name, classification, radius, orbital_period, semi_major_axis, stellar_system_id, large_celestial_id):
+        self.name = name
+        self.classification = classification
+        self.radius = radius
+        self.orbital_period = orbital_period
+        self.semi_major_axis = semi_major_axis
+        self.stellar_system_id = stellar_system_id
+        self.large_celestial_id = large_celestial_id
         self.created_at = datetime.datetime.utcnow()
         self.modified_at = datetime.datetime.utcnow()
 
