@@ -3,6 +3,9 @@ from flask_cors import CORS
 import logging
 import os
 
+# import calculation functions
+from calculations.organize import formatToCytoscape
+
 # config debug
 logging.basicConfig(level=logging.DEBUG)
 
@@ -28,16 +31,16 @@ def get_stellar_systems():
     result = stellar_systems_schema.dump(all_stellar_systems)
     return jsonify({"systems": result})
 
-# @app.route('/stellarsystem', methods=['POST'])
-# def add_stellar_system():
-#     name = request.json['name']
+@app.route('/stellarsystem/<id>', methods=['GET'])
+def get_stellar_system(id):
+    stellar_system = StellarSystem.query.get(id)
 
-#     new_stellar_system = StellarSystem(name)
+    nodeList = []
 
-#     db.session.add(new_stellar_system)
-#     db.session.commit()
+    for key in stellar_system.largeCelestials:
+        nodeList.append(formatToCytoscape(key))
 
-#     return stellar_system_schema.jsonify(new_stellar_system)
+    return jsonify(nodeList)
 
 
 
