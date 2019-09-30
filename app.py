@@ -26,7 +26,6 @@ CORS(app)
 def get_stellar_systems():
     all_stellar_systems = StellarSystem.query.all()
     result = stellar_systems_schema.dump(all_stellar_systems)
-
     return jsonify({"systems": result})
 
 # @app.route('/stellarsystem', methods=['POST'])
