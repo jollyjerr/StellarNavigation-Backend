@@ -16,9 +16,11 @@ from models.StellarSystemModel import StellarSystem, StellarSystemSchema
 #Seeds
 @manager.command
 def seed():
+    #STELLAR SYSTEMS
     # solar_system = StellarSystem(name="Solar System", stud="solar_system") 1st
     solar_system = StellarSystem.query.filter_by(name="Solar System").first().id
 
+    #LARGE CELESTIALS
     # sun = LargeCelestial(name="Sun", classification="body", radius=695510.0, orbital_period=82125000000.0, semi_major_axis=000.0, stellar_system=solar_system)   
     # mercury = LargeCelestial(name="Mercury", classification="body", radius=2439.7, orbital_period=88.0, semi_major_axis=57909050.0, stellar_system=solar_system)
     # venus = LargeCelestial(name="Venus", classification="body", radius=6051.8, orbital_period=255.0, semi_major_axis=108208000.0, stellar_system=solar_system)
@@ -39,6 +41,7 @@ def seed():
     uranus = LargeCelestial.query.filter_by(name="Uranus").first().id
     neptune = LargeCelestial.query.filter_by(name="Neptune").first().id
 
+    #SMALL CELESTIALS
     # moon = SmallCelestial(name="Moon", classification="body", radius=1737.1, orbital_period=27.3, semi_major_axis=379700.0, color='grey', stellar_system_id=solar_system, large_celestial_id=earth)
     # phobos = SmallCelestial(name="Phobos", classification="body", radius=11.267, orbital_period=0.33333333, semi_major_axis=9376, color='grey', stellar_system_id=solar_system, large_celestial_id=mars)
     # deimos = SmallCelestial(name="Deimos", classification="body", radius=6.2, orbital_period=0.792, semi_major_axis=23463.2, color='red', stellar_system_id=solar_system, large_celestial_id=mars)
@@ -55,22 +58,18 @@ def seed():
     # tethys = SmallCelestial(name="Tethys", classification="body", radius=531.1, orbital_period=1.887, semi_major_axis=294619.0, color='silver', stellar_system_id=solar_system, large_celestial_id=saturn)
     # dione = SmallCelestial(name="Dione", classification="body", radius=561.4, orbital_period=2.736, semi_major_axis=377369.0, color='grey', stellar_system_id=solar_system, large_celestial_id=saturn)
     # rhea = SmallCelestial(name="Rhea", classification="body", radius=763.8, orbital_period=4.518, semi_major_axis=527108.0, color='grey', stellar_system_id=solar_system, large_celestial_id=saturn)
-    titan = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    hyperion = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    lapetus = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    miranda = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    ariel = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    umbriel = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    titania = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    oberon = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    triton = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    pluto = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    charon = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
-    eris = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
+    titan = SmallCelestial(name="Titan", classification="body", radius=2574.73, orbital_period=15.945, semi_major_axis=1221870.0, color='yellow', stellar_system_id=solar_system, large_celestial_id=saturn)
+    miranda = SmallCelestial(name="Miranda", classification="body", radius=235.8, orbital_period=1.413, semi_major_axis=129390.0, color='silver', stellar_system_id=solar_system, large_celestial_id=uranus)
+    ariel = SmallCelestial(name="Ariel", classification="body", radius=578.9, orbital_period=2.52, semi_major_axis=191020.0, color='grey', stellar_system_id=solar_system, large_celestial_id=uranus)
+    umbriel = SmallCelestial(name="Umbriel", classification="body", radius=584.7, orbital_period=4.144, semi_major_axis=266000.0, color='grey', stellar_system_id=solar_system, large_celestial_id=uranus)
+    triton = SmallCelestial(name="Triton", classification="body", radius=1353.4, orbital_period=5.876, semi_major_axis=354759.0, color='silver', stellar_system_id=solar_system, large_celestial_id=neptune)
+    pluto = SmallCelestial(name="Pluto", classification="body", radius=1188.3, orbital_period=90560.2, semi_major_axis=590638, color='pink', stellar_system_id=solar_system, large_celestial_id=sun)
+    # charon = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
+    # eris = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
 
-
+    #DB ACTION
     # db.session.add(solar_system) 1st
-    # db.session.add_all([])
+    db.session.add_all([titan, miranda, ariel, umbriel, triton, pluto])
     db.session.commit()
 
 
