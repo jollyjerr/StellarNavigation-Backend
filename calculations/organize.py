@@ -12,6 +12,6 @@ def formatToCytoscape(celestial):
             'width': (celestial.radius*0.001),
             'height': (celestial.radius*0.001),
             'color': 'yellow',
-            'background-color': 'blue'
+            'background-color': celestial.color
         }
     }
