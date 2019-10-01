@@ -16,7 +16,7 @@ from models.StellarSystemModel import StellarSystem, StellarSystemSchema
 #Seeds
 @manager.command
 def seed():
-    # solar_system = StellarSystem(name="Solar System")
+    # solar_system = StellarSystem(name="Solar System", stud="solar_system")
     solar_system = StellarSystem.query.filter_by(name="Solar System").first().id
 
     # sun = LargeCelestial(name="Sun", classification="body", radius=695510.0, orbital_period=82125000000.0, semi_major_axis=000.0, stellar_system=solar_system)   
