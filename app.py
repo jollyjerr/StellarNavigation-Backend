@@ -38,8 +38,9 @@ def get_stellar_system(id):
     nodeList = []
 
     for key in stellar_system.largeCelestials:
-        nodeList.append(formatToCytoscape(key))
+        nodeList += formatToCytoscape(key)
 
+    
     return jsonify(nodeList)
 
 
