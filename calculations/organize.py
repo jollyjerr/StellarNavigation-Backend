@@ -33,8 +33,8 @@ def formatSmall(small, axis):
             'label': small.name
         },
         'position': {
-            'x': 700,
-            'y': (small.semi_major_axis*0.00001) + axis
+            'x': (small.semi_major_axis*0.0001) + 500,
+            'y': (small.semi_major_axis*0.0001) + axis
         },
         'style': {
             'width': (small.radius*0.001),
