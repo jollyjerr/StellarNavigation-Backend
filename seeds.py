@@ -43,9 +43,10 @@ def seed():
     # uranus = LargeCelestial.query.filter_by(name="Uranus").first().id
     # neptune = LargeCelestial.query.filter_by(name="Neptune").first().id
 
-    alpha_centauri_A = LargeCelestial(name="Alpha Centauri A", classification="body", radius=851486.4, orbital_period=000.0, semi_major_axis=000.0, color='yellow', stellar_system_id=alpha_centauri)
-    alpha_centauri_B = LargeCelestial(name="Alpha Centauri B", classification="body", radius=600787.2, orbital_period=3.2357, semi_major_axis=5983915.0, color='red', stellar_system_id=alpha_centauri)
-    proxima_centauri_b = LargeCelestial(name="Proxima Centauri b", classification="body", radius=7356.0, orbital_period=11.186, semi_major_axis=7330295.7, color='green', stellar_system_id=alpha_centauri)
+    # alpha_centauri_A = LargeCelestial(name="Alpha Centauri A", classification="body", radius=851486.4, orbital_period=000.0, semi_major_axis=000.0, color='yellow', stellar_system_id=alpha_centauri)
+    # alpha_centauri_B = LargeCelestial(name="Alpha Centauri B", classification="body", radius=600787.2, orbital_period=3.2357, semi_major_axis=598391500.0, color='red', stellar_system_id=alpha_centauri)
+    # proxima_centauri_b = LargeCelestial(name="Proxima Centauri b", classification="body", radius=7356.0, orbital_period=11.186, semi_major_axis=733029500.7, color='green', stellar_system_id=alpha_centauri)
+    proxima_centauri = LargeCelestial(name="Proxima Centauri", classification="body", radius=107276.94, orbital_period=199655000.0, semi_major_axis=130150000000.0, color='red', stellar_system_id=alpha_centauri)
 
 
     #SMALL CELESTIALS
@@ -70,13 +71,13 @@ def seed():
     # ariel = SmallCelestial(name="Ariel", classification="body", radius=578.9, orbital_period=2.52, semi_major_axis=191020.0, color='grey', stellar_system_id=solar_system, large_celestial_id=uranus)
     # umbriel = SmallCelestial(name="Umbriel", classification="body", radius=584.7, orbital_period=4.144, semi_major_axis=266000.0, color='grey', stellar_system_id=solar_system, large_celestial_id=uranus)
     # triton = SmallCelestial(name="Triton", classification="body", radius=1353.4, orbital_period=5.876, semi_major_axis=354759.0, color='silver', stellar_system_id=solar_system, large_celestial_id=neptune)
-    # pluto = SmallCelestial(name="Pluto", classification="body", radius=1188.3, orbital_period=90560.2, semi_major_axis=590638, color='pink', stellar_system_id=solar_system, large_celestial_id=sun)
+    # pluto = SmallCelestial(name="Pluto", classification="body", radius=1188.3, orbital_period=90560.2, semi_major_axis=590638000.0, color='pink', stellar_system_id=solar_system, large_celestial_id=sun)
     # charon = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
     # eris = SmallCelestial(name="", classification="body", stellar_system_id=solar_system)
 
     #DB ACTION
     # db.session.add(solar_system) 1st
-    db.session.add_all([alpha_centauri_A, alpha_centauri_B, proxima_centauri_b])
+    db.session.add_all([proxima_centauri])
     db.session.commit()
 
 

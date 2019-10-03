@@ -40,6 +40,7 @@ def formatSmall(small, axis):
             'width': (small.radius*0.001),
             'height': (small.radius*0.001),
             'color': 'yellow',
-            'background-color': small.color
+            'background-color': small.color,
+            'font-size': '0.3rem'
         }
     }
