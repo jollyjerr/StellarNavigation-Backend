@@ -19,8 +19,11 @@ def seed():
     #STELLAR SYSTEMS
     # solar_system = StellarSystem(name="Solar System", stud="solar_system") 1st
     # solar_system = StellarSystem.query.filter_by(name="Solar System").first().id
+
     # alpha_centauri = StellarSystem(name="Alpha Centauri", stud="alpha_centauri")
-    alpha_centauri = StellarSystem.query.filter_by(name="Alpha Centauri").first().id
+    # alpha_centauri = StellarSystem.query.filter_by(name="Alpha Centauri").first().id
+
+    
 
     #LARGE CELESTIALS
     # sun = LargeCelestial(name="Sun", classification="body", radius=695510.0, orbital_period=82125000000.0, semi_major_axis=000.0, stellar_system=solar_system)   
@@ -46,7 +49,7 @@ def seed():
     # alpha_centauri_A = LargeCelestial(name="Alpha Centauri A", classification="body", radius=851486.4, orbital_period=000.0, semi_major_axis=000.0, color='yellow', stellar_system_id=alpha_centauri)
     # alpha_centauri_B = LargeCelestial(name="Alpha Centauri B", classification="body", radius=600787.2, orbital_period=3.2357, semi_major_axis=598391500.0, color='red', stellar_system_id=alpha_centauri)
     # proxima_centauri_b = LargeCelestial(name="Proxima Centauri b", classification="body", radius=7356.0, orbital_period=11.186, semi_major_axis=733029500.7, color='green', stellar_system_id=alpha_centauri)
-    proxima_centauri = LargeCelestial(name="Proxima Centauri", classification="body", radius=107276.94, orbital_period=199655000.0, semi_major_axis=130150000000.0, color='red', stellar_system_id=alpha_centauri)
+    # proxima_centauri = LargeCelestial(name="Proxima Centauri", classification="body", radius=107276.94, orbital_period=199655000.0, semi_major_axis=130150000000.0, color='red', stellar_system_id=alpha_centauri)
 
 
     #SMALL CELESTIALS
@@ -77,7 +80,7 @@ def seed():
 
     #DB ACTION
     # db.session.add(solar_system) 1st
-    db.session.add_all([proxima_centauri])
+    # db.session.add_all([proxima_centauri])
     db.session.commit()
 
 
