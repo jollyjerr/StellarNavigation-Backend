@@ -31,7 +31,7 @@ planets, stars, comets, or full stellar systems.
 
 This backend provides the frontend with accurate mapping data for the Canvas graph display. Because Python handles numbers 
 more eloquently than JS, running calculations in this system and sending the results to the frontend achieves a level of accuracy
-not achievable with Node.js.
+not obtainable with Node.js.
 
 After receiving a calculation request from the frontend, this API calculates the distance and time involved in the requested
 intergalactic journey. In an updated release, I hope to incorporate the wonderful [Poliastro](https://pypi.org/project/poliastro/)
