@@ -7,10 +7,11 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 def calculate_trip_requirements(destinations):
+
+    # logging.debug(destinations)
+
     distances = []
     names = []
-
-    # logging.debug(parents)
 
     for destination in destinations:
             distances.append(destination['semi_major_axis'])
@@ -24,7 +25,7 @@ def calculate_trip_requirements(destinations):
 
     opt_distance = (abs(opt_distance) / 149597870.69)
 
-    time = (opt_distance / 1079252848.8)
+    time = (opt_distance / 7.21436)
 
     resp = {
         'distance': opt_distance,
